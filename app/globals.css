@@ -1,15 +1,11 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +18,70 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: var(--font-heading);
+}
+
+/* Utility class to replace inline scroll padding style used in page.tsx */
+.scroll-padding-top {
+  scroll-padding-top: 5rem;
+}
+
+/* Fallback container utility in case Tailwind's container is not active/configured */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* matches px-4 */
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem; /* matches md:px-6 */
+    padding-right: 1.5rem;
+  }
+}
+
+/* Primary color utility used in page for active nav and headings */
+.text-primary {
+  color: #ff7a18 !important; /* orange accent */
+}
+
+/* Simple drawer styling for mobile sheet (side=right) */
+.sheet-side-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 85vw;
+  max-width: 360px;
+  background: white;
+  box-shadow: -8px 0 24px rgba(0,0,0,0.12);
+  z-index: 60;
+  overflow-y: auto;
+  transform: translateX(0);
+}
+
+/* Backdrop for when sheet is open */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 50;
+}
+
+/* Small responsive fallbacks for classes used in markup when Tailwind isn't processed */
+.hidden { display: none !important; }
+@media (min-width: 768px) {
+  .md\:hidden { display: none !important; }
+  .md\:flex { display: flex !important; }
+  .md\:justify-between { justify-content: space-between !important; }
+  .md\:flex-row { flex-direction: row !important; }
 }

@@ -20,8 +20,8 @@ A modern and responsive travel website landing page built to inspire travelers a
 ## 🛠 Tech Stack
 
 * **HTML5, CSS3, JavaScript**
-* **React / Next.js (optional for dynamic version)**
-* **Tailwind CSS / SCSS** for styling
+* **React / Next.js**
+* **Tailwind CSS**  for styling
 * **Framer Motion** for smooth animations (optional)
 
 ## 📌 Sections Overview

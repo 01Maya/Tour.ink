@@ -13,9 +13,6 @@ A modern and responsive travel website landing page built to inspire travelers a
 * **Newsletter Signup** – Stay updated with the latest travel offers.
 * **Responsive Design** – Works seamlessly across devices.
 
-## 🖼 Preview
-
-
 
 ## 🛠 Tech Stack
 
